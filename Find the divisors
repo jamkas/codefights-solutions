@@ -1,0 +1,36 @@
+/*
+Create a function named divisors/Divisors that takes an integer and returns an array with all of the integer's divisors(except for 1 and the number itself). If the number is prime return the string '(integer) is prime' (null in C#) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
+
+Example:
+
+divisors(12); // => [2, 3, 4, 6]
+divisors(25); // => [5]
+divisors(13); // => '13 is prime'
+
+
+class DivisorsTest extends TestCase {
+  public function testExamples() {
+    $this->assertEquals([3, 5], divisors(15));
+    $this->assertEquals([2, 3, 4, 6], divisors(12));
+    $this->assertEquals('13 is prime', divisors(13));
+  }
+}
+
+*/
+
+Solution:
+
+function divisors($integer) {
+
+    $divisors = array ();
+    for($i = 2; $i < $integer; $i ++) {       
+        if ($integer % $i == 0 )  {
+            $divisors [] = $i;
+        } 
+    }
+    // prime
+    if ( sizeof($divisors) == 0) {
+       return $integer . ' is prime';
+    }
+    return $divisors;
+}
