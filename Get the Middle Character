@@ -1,0 +1,19 @@
+/*
+* Kata.getMiddle("test") should return "es"
+* Kata.getMiddle("testing") should return "t"
+* Kata.getMiddle("middle") should return "dd"
+* Kata.getMiddle("A") should return "A"
+*/
+function getMiddle($text) {
+  $length = strlen($text);
+  $findmid = floor($length / 2);
+  $result;
+  if( ($length % 2) == 0 ) {
+    //echo "even";
+    $result =  substr($text, $findmid-1, 2);
+  } else {   
+    //echo "odd";
+    $result = substr($text, $findmid, 1);
+  }
+  return $result;
+}
